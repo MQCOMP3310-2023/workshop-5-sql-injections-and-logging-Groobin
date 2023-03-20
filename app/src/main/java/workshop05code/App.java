@@ -67,6 +67,9 @@ public class App {
             return;
         }
 
+        logger.log(Level.INFO,"The program runs");
+        System.out.println("Have Fun!");
+
         // let's get them to enter a word
 
         try (Scanner scanner = new Scanner(System.in)) {
@@ -78,8 +81,10 @@ public class App {
 
                 if (wordleDatabaseConnection.isValidWord(guess)) { 
                     System.out.println("Success! It is in the the list.\n");
+                    logger.log(Level.INFO,guess + " is in the list!");
                 }else{
                     System.out.println("Sorry. This word is NOT in the the list.\n");
+                    logger.log(Level.INFO,guess + " is NOT in the list!");
                 }
 
                 System.out.print("Enter a 4 letter word for a guess or q to quit: " );
